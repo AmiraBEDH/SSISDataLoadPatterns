@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSISDataLoadPatterns", "SSISDataLoadPatterns.dtproj", "{116880BF-2875-407E-9AF3-A429EE9D8DF7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{116880BF-2875-407E-9AF3-A429EE9D8DF7}.Development|Default.ActiveCfg = Development
+		{116880BF-2875-407E-9AF3-A429EE9D8DF7}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {394605E2-B24E-4E67-AF59-DB0A1059F5EA}
+	EndGlobalSection
+EndGlobal
