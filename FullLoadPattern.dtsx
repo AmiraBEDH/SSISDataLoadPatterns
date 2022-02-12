@@ -1,0 +1,1852 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/6/2022 7:21:25 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="AMIRABEDHIAFI"
+  DTS:CreatorName="AMIRABEDHIAFI\ACER"
+  DTS:DTSID="{918A3FC7-9556-4FF5-868A-A370F93E7957}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="3084"
+  DTS:ObjectName="FullLoadPattern"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{83A95A88-73CA-4221-A67A-4A7E45B01A09}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Full Load STG Employee"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{74C28DCA-85EA-4DA2-8F64-6EB4F20894D7}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Full Load STG Employee"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Full Load STG Employee\Destination OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[STG].[Employee]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Full Load STG Employee\Destination OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="{02AA6489-125A-4FCB-A7ED-288C995B34C8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.LearningDatabase]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Employee_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Employee_Name"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Employee_Name]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Employee_Name]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[EmpID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmpID"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[EmpID]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[EmpID]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[MarriedID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MarriedID"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[MarriedID]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[MarriedID]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[MaritalStatusID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MaritalStatusID"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[MaritalStatusID]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[MaritalStatusID]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[GenderID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="GenderID"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[GenderID]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[GenderID]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[EmpStatusID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmpStatusID"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[EmpStatusID]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[EmpStatusID]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[DeptID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DeptID"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DeptID]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[DeptID]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[PerfScoreID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PerfScoreID"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[PerfScoreID]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[PerfScoreID]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[FromDiversityJobFairID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FromDiversityJobFairID"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[FromDiversityJobFairID]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[FromDiversityJobFairID]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Salary]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Salary"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Salary]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Salary]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Termd]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Termd"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Termd]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Termd]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[PositionID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PositionID"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[PositionID]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[PositionID]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Position]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Position"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Position]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Position]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[State]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="State"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[State]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[State]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Zip]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Zip"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Zip]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Zip]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[DOB]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DOB"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DOB]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[DOB]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Sex]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sex"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Sex]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Sex]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[MaritalDesc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MaritalDesc"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[MaritalDesc]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[MaritalDesc]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[CitizenDesc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CitizenDesc"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[CitizenDesc]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[CitizenDesc]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[HispanicLatino]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HispanicLatino"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[HispanicLatino]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[HispanicLatino]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[RaceDesc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RaceDesc"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[RaceDesc]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[RaceDesc]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[DateofHire]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DateofHire"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DateofHire]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[DateofHire]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[DateofTermination]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DateofTermination"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DateofTermination]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[DateofTermination]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[TermReason]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TermReason"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[TermReason]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[TermReason]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[EmploymentStatus]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmploymentStatus"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[EmploymentStatus]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[EmploymentStatus]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Department]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Department"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Department]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Department]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[ManagerName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ManagerName"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ManagerName]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[ManagerName]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[ManagerID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ManagerID"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ManagerID]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[ManagerID]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[RecruitmentSource]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RecruitmentSource"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[RecruitmentSource]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[RecruitmentSource]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[PerformanceScore]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PerformanceScore"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[PerformanceScore]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[PerformanceScore]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[EngagementSurvey]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EngagementSurvey"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[EngagementSurvey]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[EngagementSurvey]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[EmpSatisfaction]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmpSatisfaction"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[EmpSatisfaction]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[EmpSatisfaction]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[SpecialProjectsCount]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SpecialProjectsCount"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[SpecialProjectsCount]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[SpecialProjectsCount]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[LastPerformanceReview_Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LastPerformanceReview_Date"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[LastPerformanceReview_Date]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[LastPerformanceReview_Date]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[DaysLateLast30]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DaysLateLast30"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DaysLateLast30]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[DaysLateLast30]" />
+                    <inputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Absences]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Absences"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Absences]"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Absences]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Employee_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Employee_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[EmpID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EmpID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[MarriedID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MarriedID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[MaritalStatusID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MaritalStatusID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[GenderID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="GenderID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[EmpStatusID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EmpStatusID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DeptID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DeptID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[PerfScoreID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PerfScoreID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[FromDiversityJobFairID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FromDiversityJobFairID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Salary]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Salary" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Termd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Termd" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[PositionID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PositionID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Position]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Position" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Zip]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Zip" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DOB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DOB" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Sex]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sex" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[MaritalDesc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MaritalDesc" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[CitizenDesc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CitizenDesc" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[HispanicLatino]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HispanicLatino" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[RaceDesc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RaceDesc" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DateofHire]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DateofHire" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DateofTermination]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DateofTermination" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[TermReason]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TermReason" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[EmploymentStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EmploymentStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Department]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Department" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ManagerName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ManagerName" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ManagerID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ManagerID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[RecruitmentSource]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RecruitmentSource" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[PerformanceScore]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PerformanceScore" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[EngagementSurvey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EngagementSurvey" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[EmpSatisfaction]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EmpSatisfaction" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[SpecialProjectsCount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SpecialProjectsCount" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[LastPerformanceReview_Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LastPerformanceReview_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DaysLateLast30]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DaysLateLast30" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Absences]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Absences" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Full Load STG Employee\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Full Load STG Employee\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Full Load STG Employee\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Full Load STG Employee\Source du fichier plat"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Source du fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Source du fichier plat"
+              localeId="3084"
+              name="Source du fichier plat"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Spécifie si les colonnes dont la longueur est zéro sont traitées comme des valeurs NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom d'une colonne de sortie contenant le nom du fichier. Si aucun nom n'est spécifié, aucune colonne de sortie contenant le nom du fichier ne sera générée."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Full Load STG Employee\Source du fichier plat.Connections[FlatFileConnection]"
+                  connectionManagerID="{6F7357C7-B69A-43A0-A169-1CCA46013579}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[HRDataset_v14_CSV_Source]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+                  name="Sortie de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Employee_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[Employee_Name]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Employee_Name]"
+                      name="Employee_Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[EmpID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[EmpID]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[EmpID]"
+                      name="EmpID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[MarriedID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[MarriedID]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[MarriedID]"
+                      name="MarriedID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[MaritalStatusID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[MaritalStatusID]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[MaritalStatusID]"
+                      name="MaritalStatusID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[GenderID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[GenderID]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[GenderID]"
+                      name="GenderID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[EmpStatusID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[EmpStatusID]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[EmpStatusID]"
+                      name="EmpStatusID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[DeptID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[DeptID]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[DeptID]"
+                      name="DeptID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[PerfScoreID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[PerfScoreID]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[PerfScoreID]"
+                      name="PerfScoreID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[FromDiversityJobFairID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[FromDiversityJobFairID]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[FromDiversityJobFairID]"
+                      name="FromDiversityJobFairID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Salary]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[Salary]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Salary]"
+                      name="Salary"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Termd]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[Termd]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Termd]"
+                      name="Termd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[PositionID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[PositionID]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[PositionID]"
+                      name="PositionID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Position]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[Position]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Position]"
+                      name="Position"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[State]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Zip]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[Zip]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Zip]"
+                      name="Zip"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[DOB]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[DOB]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[DOB]"
+                      name="DOB"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Sex]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[Sex]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Sex]"
+                      name="Sex"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[MaritalDesc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[MaritalDesc]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[MaritalDesc]"
+                      name="MaritalDesc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[CitizenDesc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[CitizenDesc]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[CitizenDesc]"
+                      name="CitizenDesc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[HispanicLatino]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[HispanicLatino]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[HispanicLatino]"
+                      name="HispanicLatino"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[RaceDesc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[RaceDesc]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[RaceDesc]"
+                      name="RaceDesc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[DateofHire]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[DateofHire]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[DateofHire]"
+                      name="DateofHire"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[DateofTermination]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[DateofTermination]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[DateofTermination]"
+                      name="DateofTermination"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[TermReason]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[TermReason]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[TermReason]"
+                      name="TermReason"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[EmploymentStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[EmploymentStatus]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[EmploymentStatus]"
+                      name="EmploymentStatus"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Department]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[Department]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Department]"
+                      name="Department"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[ManagerName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[ManagerName]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[ManagerName]"
+                      name="ManagerName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[ManagerID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[ManagerID]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[ManagerID]"
+                      name="ManagerID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[RecruitmentSource]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[RecruitmentSource]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[RecruitmentSource]"
+                      name="RecruitmentSource"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[PerformanceScore]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[PerformanceScore]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[PerformanceScore]"
+                      name="PerformanceScore"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[EngagementSurvey]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[EngagementSurvey]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[EngagementSurvey]"
+                      name="EngagementSurvey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[EmpSatisfaction]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[EmpSatisfaction]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[EmpSatisfaction]"
+                      name="EmpSatisfaction"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[SpecialProjectsCount]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[SpecialProjectsCount]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[SpecialProjectsCount]"
+                      name="SpecialProjectsCount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[LastPerformanceReview_Date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[LastPerformanceReview_Date]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[LastPerformanceReview_Date]"
+                      name="LastPerformanceReview_Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[DaysLateLast30]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[DaysLateLast30]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[DaysLateLast30]"
+                      name="DaysLateLast30"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Absences]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[Absences]"
+                      length="50"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[Absences]"
+                      name="Absences"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[Employee_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Employee_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[EmpID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EmpID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[MarriedID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MarriedID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[MaritalStatusID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MaritalStatusID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[GenderID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="GenderID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[EmpStatusID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EmpStatusID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[DeptID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DeptID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[PerfScoreID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PerfScoreID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[FromDiversityJobFairID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FromDiversityJobFairID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[Salary]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Salary" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[Termd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Termd" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[PositionID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PositionID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[Position]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Position" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[Zip]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Zip" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[DOB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DOB" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[Sex]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sex" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[MaritalDesc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MaritalDesc" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[CitizenDesc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CitizenDesc" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[HispanicLatino]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HispanicLatino" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[RaceDesc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RaceDesc" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[DateofHire]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DateofHire" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[DateofTermination]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DateofTermination" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[TermReason]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TermReason" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[EmploymentStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EmploymentStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[Department]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Department" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[ManagerName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ManagerName" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[ManagerID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ManagerID" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[RecruitmentSource]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RecruitmentSource" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[PerformanceScore]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PerformanceScore" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[EngagementSurvey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EngagementSurvey" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[EmpSatisfaction]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EmpSatisfaction" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[SpecialProjectsCount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SpecialProjectsCount" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[LastPerformanceReview_Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LastPerformanceReview_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[DaysLateLast30]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DaysLateLast30" />
+                    <externalMetadataColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[Absences]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Absences" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Colonne de sortie d'erreur de source de fichier plat"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      name="Colonne de sortie d'erreur de source de fichier plat" />
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Full Load STG Employee.Paths[Sortie de source de fichier plat]"
+              endId="Package\Full Load STG Employee\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de source de fichier plat"
+              startId="Package\Full Load STG Employee\Source du fichier plat.Outputs[Sortie de source de fichier plat]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRUNCATE TABME STG Employee"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F7160C72-DFA9-49B4-B8F5-C2339676CBF5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRUNCATE TABME STG Employee"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{02AA6489-125A-4FCB-A7ED-288C995B34C8}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE STG.Employee" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{2690927D-D292-4C5B-8506-33C70EFCD8FD}"
+      DTS:From="Package\TRUNCATE TABME STG Employee"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Full Load STG Employee" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Full Load STG Employee"
+          TopLeft="237,177" />
+        <NodeLayout
+          Size="239,42"
+          Id="Package\TRUNCATE TABME STG Employee"
+          TopLeft="221,35" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="337,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,100"
+              Start="0,0"
+              End="0,92.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,92.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Full Load STG Employee">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Full Load STG Employee\Destination OLE DB"
+          TopLeft="368,107" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Full Load STG Employee\Source du fichier plat"
+          TopLeft="33,104" />
+        <EdgeLayout
+          Id="Package\Full Load STG Employee.Paths[Sortie de source de fichier plat]"
+          TopLeft="212,126.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="156,0"
+              Start="0,0"
+              End="148.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="148.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Full Load STG Employee\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
