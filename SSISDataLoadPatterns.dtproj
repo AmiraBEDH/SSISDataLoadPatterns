@@ -26,11 +26,12 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">AMIRABEDHIAFI</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAASDgN0LBu7ESeb05Ibh0n/QAAAAACAAAAAAAQZgAAAAEAACAAAADi/zRhtF1qOTTtmiSbjX0hWlbSSneCRFBoao9Wg3QbEgAAAAAOgAAAAAIAACAAAADhgcGVCndQVzoYZ1BrLxvd3HNrr+BYOTlywcIP514AUZAAAADwNlOcw0VuOccWCPgOVPtKkTu/FEexXMI4aWmGCqJehS89v5rDNnTe3PwbmtGLJAgw3WMX7faYud+g2B2Svpv6uRw7CECTrhwa9z6Uo3p6/i8mBIn0IvU9CJEKgkA7ZAwnuI4Hfv4ZdAT36dH0M56Kos3ylsine2YAilr7Oz0Lb0QMZkhUaUi0AnGi6fRo4s9AAAAAHz1dHjQDivk/pED3bSUjuusaE+Q/I5NPiKKMSqHqTY7ZhV5H5HtnerT+4bd+Wuk93wui9t1+vqi58mw0n/H/iA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAASDgN0LBu7ESeb05Ibh0n/QAAAAACAAAAAAAQZgAAAAEAACAAAAC+KxsVhR1QYXeoQJcx4pNI0crw0tWM1wreZ11vCmhjcwAAAAAOgAAAAAIAACAAAACf46YWXuae/ETh4wTCYV3NDxBbjHffMqhnLrgdEu4RA5AAAABYjlEX9EpO/E9NwMU4qEJvrNiGtaJu9uJQ1O75/iG0EX+CXlFov8H5WnlorVTqHou0T98LRoQFgUHbC5Fj7ksaon807DHavQCLY0siVl1e+B7Swg45RIPgk+V/8eJarKc41mcSSdHO2Gbm6hgaHFrdz3ia8zjFTgf8LM2X2NkH/ULVF3iAaHq7Lr3SwNFF7H9AAAAAbEfY4Cykg6WoYste2FKpnlrxKl4ix02z696nkvUU2CLp4xNCGC9j6nHSaM94YS8ok9uZKwF/6yBtsmJmriQOXg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="FullLoadPattern.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="IncrementalLoadPattern_Using_Merge_Join.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="LocalHost.LearningDatabase.conmgr" />
@@ -358,10 +359,27 @@
                 <SSIS:Property SSIS:Name="Name">FullLoadPattern</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">4</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">5</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{CC4B66E8-A6C7-44D2-B5B3-985F3C612E87}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{83A95A88-73CA-4221-A67A-4A7E45B01A09}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="IncrementalLoadPattern_Using_Merge_Join.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{E28B0BC5-8344-492C-9984-C5F7F321A76A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">IncrementalLoadPattern</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B84013E7-DEE1-45FD-AC4F-D50FB4343F40}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
