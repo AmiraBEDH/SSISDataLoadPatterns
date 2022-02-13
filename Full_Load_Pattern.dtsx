@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="AMIRABEDHIAFI"
   DTS:CreatorName="AMIRABEDHIAFI\ACER"
-  DTS:DTSID="{918A3FC7-9556-4FF5-868A-A370F93E7957}"
+  DTS:DTSID="{90E3CD38-F696-4BF4-8E05-39C003831655}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.132"
   DTS:LocaleID="3084"
-  DTS:ObjectName="FullLoadPattern"
+  DTS:ObjectName="Full_Load_Pattern"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{FB7E5418-A7EE-48A9-93FD-967BFB16627D}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{83616CAA-50DA-4D7D-8512-C7E2CE363142}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1813,13 +1813,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="147,42"
-          Id="Package\Full Load STG Employee\STG Employee"
-          TopLeft="368,107" />
-        <NodeLayout
           Size="174,42"
           Id="Package\Full Load STG Employee\HR Dataset v14 CSV"
           TopLeft="33,104" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Full Load STG Employee\STG Employee"
+          TopLeft="368,107" />
         <EdgeLayout
           Id="Package\Full Load STG Employee.Paths[Sortie de source de fichier plat]"
           TopLeft="207,126.5">

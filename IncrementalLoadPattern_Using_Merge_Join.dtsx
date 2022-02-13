@@ -11,8 +11,8 @@
   DTS:LocaleID="3084"
   DTS:ObjectName="IncrementalLoadPattern"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{D3117FE8-4508-4148-A2A9-A6B6CD3EB6B1}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{88C52888-9868-446E-B113-439273B35044}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -781,147 +781,6 @@
                       refId="Package\Incremental Load using MERGE JOIN\Add New Records to STG Employee table.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Incremental Load using MERGE JOIN\Add New Records to STG Employee table.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel"
-              componentClassID="Microsoft.ConditionalSplit"
-              contactInfo="Fractionnement conditionnel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
-              description="Achemine des lignes de données vers différentes sorties, selon le contexte des données. Utilisez des conditions (expressions SSIS) pour spécifier les lignes qui seront acheminées. Par exemple, séparez les enregistrements qui doivent être nettoyés de ceux qui sont prêts à être chargés ou acheminez uniquement un sous-ensemble d'enregistrements."
-              name="Fractionnement conditionnel"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]"
-                  description="Entrée vers la transformation de fractionnement conditionnel"
-                  name="Entrée de fractionnement conditionnel">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[Employee_NameSTG]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Employee_NameSTG"
-                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[Employee_NameSTG]" />
-                    <inputColumn
-                      refId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[Employee_NameSRC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Employee_NameSRC"
-                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[Employee_NameSRC]" />
-                    <inputColumn
-                      refId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[EmpIDSTG]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="EmpIDSTG"
-                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmpIDSTG]" />
-                    <inputColumn
-                      refId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[EmpIDSRC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="EmpIDSRC"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmpIDSRC]" />
-                    <inputColumn
-                      refId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[MarriedIDSTG]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="MarriedIDSTG"
-                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MarriedIDSTG]" />
-                    <inputColumn
-                      refId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[MaritalStatusIDSTG]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="MaritalStatusIDSTG"
-                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MaritalStatusIDSTG]" />
-                    <inputColumn
-                      refId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[MarriedIDSRC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="MarriedIDSRC"
-                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MarriedIDSRC]" />
-                    <inputColumn
-                      refId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[MaritalStatusIDSRC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="MaritalStatusIDSRC"
-                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MaritalStatusIDSRC]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Outputs[OnlyUpdate]"
-                  description="Sortie 1 de la transformation de fractionnement conditionnel"
-                  errorOrTruncationOperation="Calcul"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="OnlyUpdate"
-                  synchronousInputId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]"
-                  truncationRowDisposition="FailComponent">
-                  <properties>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Spécifie l'expression. Cette version d'expression utilise les identificateurs de traçabilité à la place des noms de colonnes."
-                      name="Expression">(#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[Employee_NameSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[Employee_NameSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmpIDSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmpIDSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MarriedIDSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MarriedIDSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MaritalStatusIDSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MaritalStatusIDSTG]})</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Spécifie la version claire de l'expression. Cette version d'expression utilise les noms de colonnes."
-                      expressionType="Notify"
-                      name="FriendlyExpression">(Employee_NameSRC != Employee_NameSTG) &amp;&amp; (EmpIDSRC != EmpIDSTG) &amp;&amp; (MarriedIDSRC != MarriedIDSTG) &amp;&amp; (MaritalStatusIDSRC != MaritalStatusIDSTG)</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Spécifie la position de la condition dans la liste des conditions que la transformation évalue. L'ordre d'évaluation se fait par ordre croissant de valeur."
-                      name="EvaluationOrder">0</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Outputs[Sortie par défaut de fractionnement conditionnel]"
-                  description="Sortie par défaut de la transformation de fractionnement conditionnel"
-                  exclusionGroup="1"
-                  name="Sortie par défaut de fractionnement conditionnel"
-                  synchronousInputId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      name="IsDefaultOut">true</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel]"
-                  description="Sortie d'erreur de la transformation de fractionnement conditionnel"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de fractionnement conditionnel"
-                  synchronousInputId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -4966,6 +4825,595 @@ WHERE [EmpID] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Fractionnement conditionnel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Achemine des lignes de données vers différentes sorties, selon le contexte des données. Utilisez des conditions (expressions SSIS) pour spécifier les lignes qui seront acheminées. Par exemple, séparez les enregistrements qui doivent être nettoyés de ceux qui sont prêts à être chargés ou acheminez uniquement un sous-ensemble d'enregistrements."
+              name="Update Only the records changing from the CSV file"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel]"
+                  description="Entrée vers la transformation de fractionnement conditionnel"
+                  name="Entrée de fractionnement conditionnel">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[Employee_NameSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Employee_NameSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[Employee_NameSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[Employee_NameSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Employee_NameSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[Employee_NameSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[EmpIDSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmpIDSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmpIDSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[EmpIDSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmpIDSRC"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmpIDSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[MarriedIDSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MarriedIDSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MarriedIDSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[MaritalStatusIDSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MaritalStatusIDSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MaritalStatusIDSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[MarriedIDSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MarriedIDSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MarriedIDSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[MaritalStatusIDSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MaritalStatusIDSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MaritalStatusIDSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[GenderIDSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="GenderIDSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[GenderIDSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[EmpStatusIDSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmpStatusIDSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmpStatusIDSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[DeptIDSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DeptIDSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DeptIDSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[PerfScoreIDSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PerfScoreIDSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[PerfScoreIDSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[FromDiversityJobFairIDSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FromDiversityJobFairIDSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[FromDiversityJobFairIDSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[SalarySTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SalarySTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[SalarySTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[TermdSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TermdSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[TermdSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[PositionIDSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PositionIDSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[PositionIDSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[PositionSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PositionSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[PositionSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[StateSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="StateSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[StateSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[ZipSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ZipSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[ZipSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[DOBSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DOBSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DOBSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[SexSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SexSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[SexSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[MaritalDescSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MaritalDescSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MaritalDescSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[CitizenDescSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CitizenDescSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[CitizenDescSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[HispanicLatinoSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HispanicLatinoSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[HispanicLatinoSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[RaceDescSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RaceDescSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[RaceDescSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[DateofHireSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DateofHireSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DateofHireSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[DateofTerminationSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DateofTerminationSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DateofTerminationSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[TermReasonSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TermReasonSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[TermReasonSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[EmploymentStatusSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmploymentStatusSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmploymentStatusSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[DepartmentSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DepartmentSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DepartmentSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[ManagerNameSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ManagerNameSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[ManagerNameSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[ManagerIDSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ManagerIDSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[ManagerIDSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[RecruitmentSourceSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RecruitmentSourceSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[RecruitmentSourceSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[PerformanceScoreSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PerformanceScoreSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[PerformanceScoreSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[EngagementSurveySTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EngagementSurveySTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EngagementSurveySTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[EmpSatisfactionSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmpSatisfactionSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmpSatisfactionSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[SpecialProjectsCountSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SpecialProjectsCountSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[SpecialProjectsCountSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[LastPerformanceReview_DateSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LastPerformanceReview_DateSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[LastPerformanceReview_DateSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[DaysLateLast30STG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DaysLateLast30STG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DaysLateLast30STG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[AbsencesSTG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AbsencesSTG"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[AbsencesSTG]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[GenderIDSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="GenderIDSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[GenderIDSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[EmpStatusIDSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmpStatusIDSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmpStatusIDSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[DeptIDSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DeptIDSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DeptIDSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[PerfScoreIDSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PerfScoreIDSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[PerfScoreIDSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[FromDiversityJobFairIDSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FromDiversityJobFairIDSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[FromDiversityJobFairIDSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[SalarySRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SalarySRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[SalarySRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[TermdSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TermdSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[TermdSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[PositionIDSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PositionIDSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[PositionIDSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[PositionSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PositionSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[PositionSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[StateSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="StateSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[StateSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[ZipSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ZipSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[ZipSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[DOBSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DOBSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DOBSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[SexSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SexSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[SexSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[MaritalDescSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MaritalDescSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MaritalDescSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[CitizenDescSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CitizenDescSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[CitizenDescSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[HispanicLatinoSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HispanicLatinoSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[HispanicLatinoSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[RaceDescSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RaceDescSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[RaceDescSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[DateofHireSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DateofHireSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DateofHireSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[DateofTerminationSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DateofTerminationSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DateofTerminationSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[TermReasonSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TermReasonSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[TermReasonSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[EmploymentStatusSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmploymentStatusSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmploymentStatusSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[DepartmentSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DepartmentSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DepartmentSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[ManagerNameSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ManagerNameSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[ManagerNameSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[ManagerIDSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ManagerIDSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[ManagerIDSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[RecruitmentSourceSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RecruitmentSourceSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[RecruitmentSourceSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[PerformanceScoreSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PerformanceScoreSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[PerformanceScoreSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[EngagementSurveySRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EngagementSurveySRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EngagementSurveySRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[EmpSatisfactionSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmpSatisfactionSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmpSatisfactionSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[SpecialProjectsCountSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SpecialProjectsCountSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[SpecialProjectsCountSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[LastPerformanceReview_DateSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LastPerformanceReview_DateSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[LastPerformanceReview_DateSRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[DaysLateLast30SRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DaysLateLast30SRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DaysLateLast30SRC]" />
+                    <inputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel].Columns[AbsencesSRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AbsencesSRC"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[AbsencesSRC]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Outputs[OnlyUpdate]"
+                  description="Sortie 1 de la transformation de fractionnement conditionnel"
+                  errorOrTruncationOperation="Calcul"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="OnlyUpdate"
+                  synchronousInputId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Spécifie l'expression. Cette version d'expression utilise les identificateurs de traçabilité à la place des noms de colonnes."
+                      name="Expression">(#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[Employee_NameSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[Employee_NameSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmpIDSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmpIDSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MarriedIDSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MarriedIDSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MaritalStatusIDSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MaritalStatusIDSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[GenderIDSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[GenderIDSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmpStatusIDSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmpStatusIDSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DeptIDSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DeptIDSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[PerfScoreIDSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[PerfScoreIDSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[FromDiversityJobFairIDSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[FromDiversityJobFairIDSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[SalarySRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[SalarySTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[TermdSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[TermdSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[PositionIDSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[PositionIDSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[PositionSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[PositionSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[StateSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[StateSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[ZipSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[ZipSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DOBSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DOBSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[SexSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[SexSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MaritalDescSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[MaritalDescSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[CitizenDescSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[CitizenDescSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[HispanicLatinoSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[HispanicLatinoSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[RaceDescSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[RaceDescSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DateofHireSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DateofHireSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DateofTerminationSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DateofTerminationSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[TermReasonSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[TermReasonSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmploymentStatusSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmploymentStatusSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DepartmentSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DepartmentSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[ManagerNameSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[ManagerNameSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[ManagerIDSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[ManagerIDSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[RecruitmentSourceSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[RecruitmentSourceSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[PerformanceScoreSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[PerformanceScoreSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EngagementSurveySRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EngagementSurveySTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmpSatisfactionSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[EmpSatisfactionSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[SpecialProjectsCountSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[SpecialProjectsCountSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[LastPerformanceReview_DateSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[LastPerformanceReview_DateSTG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DaysLateLast30SRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[DaysLateLast30STG]}) &amp;&amp; (#{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[AbsencesSRC]} != #{Package\Incremental Load using MERGE JOIN\Merge Join.Outputs[Sortie de jointure de fusion].Columns[AbsencesSTG]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Spécifie la version claire de l'expression. Cette version d'expression utilise les noms de colonnes."
+                      expressionType="Notify"
+                      name="FriendlyExpression">(Employee_NameSRC != Employee_NameSTG) &amp;&amp; (EmpIDSRC != EmpIDSTG) &amp;&amp; (MarriedIDSRC != MarriedIDSTG) &amp;&amp; (MaritalStatusIDSRC != MaritalStatusIDSTG) &amp;&amp; (GenderIDSRC != GenderIDSTG) &amp;&amp; (EmpStatusIDSRC != EmpStatusIDSTG) &amp;&amp; (DeptIDSRC != DeptIDSTG) &amp;&amp; (PerfScoreIDSRC != PerfScoreIDSTG) &amp;&amp; (FromDiversityJobFairIDSRC != FromDiversityJobFairIDSTG) &amp;&amp; (SalarySRC != SalarySTG) &amp;&amp; (TermdSRC != TermdSTG) &amp;&amp; (PositionIDSRC != PositionIDSTG) &amp;&amp; (PositionSRC != PositionSTG) &amp;&amp; (StateSRC != StateSTG) &amp;&amp; (ZipSRC != ZipSTG) &amp;&amp; (DOBSRC != DOBSTG) &amp;&amp; (SexSRC != SexSTG) &amp;&amp; (MaritalDescSRC != MaritalDescSTG) &amp;&amp; (CitizenDescSRC != CitizenDescSTG) &amp;&amp; (HispanicLatinoSRC != HispanicLatinoSTG) &amp;&amp; (RaceDescSRC != RaceDescSTG) &amp;&amp; (DateofHireSRC != DateofHireSTG) &amp;&amp; (DateofTerminationSRC != DateofTerminationSTG) &amp;&amp; (TermReasonSRC != TermReasonSTG) &amp;&amp; (EmploymentStatusSRC != EmploymentStatusSTG) &amp;&amp; (DepartmentSRC != DepartmentSTG) &amp;&amp; (ManagerNameSRC != ManagerNameSTG) &amp;&amp; (ManagerIDSRC != ManagerIDSTG) &amp;&amp; (RecruitmentSourceSRC != RecruitmentSourceSTG) &amp;&amp; (PerformanceScoreSRC != PerformanceScoreSTG) &amp;&amp; (EngagementSurveySRC != EngagementSurveySTG) &amp;&amp; (EmpSatisfactionSRC != EmpSatisfactionSTG) &amp;&amp; (SpecialProjectsCountSRC != SpecialProjectsCountSTG) &amp;&amp; (LastPerformanceReview_DateSRC != LastPerformanceReview_DateSTG) &amp;&amp; (DaysLateLast30SRC != DaysLateLast30STG) &amp;&amp; (AbsencesSRC != AbsencesSTG)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Spécifie la position de la condition dans la liste des conditions que la transformation évalue. L'ordre d'évaluation se fait par ordre croissant de valeur."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Outputs[Sortie par défaut de fractionnement conditionnel]"
+                  description="Sortie par défaut de la transformation de fractionnement conditionnel"
+                  exclusionGroup="1"
+                  name="Sortie par défaut de fractionnement conditionnel"
+                  synchronousInputId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Outputs[Sortie d'erreur de fractionnement conditionnel]"
+                  description="Sortie d'erreur de la transformation de fractionnement conditionnel"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de fractionnement conditionnel"
+                  synchronousInputId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Incremental Load using MERGE JOIN\Update records in the STG table"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="Commande OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;2"
@@ -5853,7 +6301,7 @@ WHERE [EmpID] = ?</property>
               refId="Package\Incremental Load using MERGE JOIN.Paths[OnlyUpdate]"
               endId="Package\Incremental Load using MERGE JOIN\Update records in the STG table.Inputs[Entrée de commande OLE DB]"
               name="OnlyUpdate"
-              startId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Outputs[OnlyUpdate]" />
+              startId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Outputs[OnlyUpdate]" />
             <path
               refId="Package\Incremental Load using MERGE JOIN.Paths[Sortie de colonne dérivée]"
               endId="Package\Incremental Load using MERGE JOIN\Add New Records to STG Employee table.Inputs[Entrée de destination OLE DB]"
@@ -5876,7 +6324,7 @@ WHERE [EmpID] = ?</property>
               startId="Package\Incremental Load using MERGE JOIN\STG Employee table.Outputs[Sortie de source OLE DB]" />
             <path
               refId="Package\Incremental Load using MERGE JOIN.Paths[UpdateOldRecords]"
-              endId="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]"
+              endId="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file.Inputs[Entrée de fractionnement conditionnel]"
               name="UpdateOldRecords"
               startId="Package\Incremental Load using MERGE JOIN\Insert Update Delete.Outputs[UpdateOldRecords]" />
           </paths>
@@ -5899,7 +6347,7 @@ WHERE [EmpID] = ?</property>
         <NodeLayout
           Size="253,42"
           Id="Package\Incremental Load using MERGE JOIN"
-          TopLeft="57.5,22.5" />
+          TopLeft="89.5,116.5" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -5909,17 +6357,77 @@ WHERE [EmpID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="130,42"
+          Id="Package\Incremental Load using MERGE JOIN\Merge Join"
+          TopLeft="253,99" />
+        <NodeLayout
           Size="174,42"
           Id="Package\Incremental Load using MERGE JOIN\STG Employee table"
           TopLeft="103,25" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Incremental Load using MERGE JOIN\Insert Update Delete"
+          TopLeft="236,174" />
         <NodeLayout
           Size="207,42"
           Id="Package\Incremental Load using MERGE JOIN\HR Dataset v14 datasource"
           TopLeft="399,23" />
         <NodeLayout
-          Size="130,42"
-          Id="Package\Incremental Load using MERGE JOIN\Merge Join"
-          TopLeft="253,99" />
+          Size="323,42"
+          Id="Package\Incremental Load using MERGE JOIN\Update Only the records changing from the CSV file"
+          TopLeft="302.285714285714,281.285714285714" />
+        <NodeLayout
+          Size="314,42"
+          Id="Package\Incremental Load using MERGE JOIN\Update DeletionDate column to the date of delete"
+          TopLeft="504,183" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\Incremental Load using MERGE JOIN\Update records in the STG table"
+          TopLeft="590,356.571428571429" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Incremental Load using MERGE JOIN\Add InsertionDate"
+          TopLeft="53,195" />
+        <NodeLayout
+          Size="273,42"
+          Id="Package\Incremental Load using MERGE JOIN\Add New Records to STG Employee table"
+          TopLeft="0,292" />
+        <EdgeLayout
+          Id="Package\Incremental Load using MERGE JOIN.Paths[UpdateOldRecords]"
+          TopLeft="324.5,216">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="139.285714285714,65.2857142857143"
+              Start="0,0"
+              End="139.285714285714,57.7857142857143">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.6428571428571" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.6428571428571"
+                    Point2="0,32.6428571428571"
+                    Point3="4,32.6428571428571" />
+                  <mssgle:LineSegment
+                    End="135.285714285714,32.6428571428571" />
+                  <mssgle:CubicBezierSegment
+                    Point1="135.285714285714,32.6428571428571"
+                    Point2="139.285714285714,32.6428571428571"
+                    Point3="139.285714285714,36.6428571428571" />
+                  <mssgle:LineSegment
+                    End="139.285714285714,57.7857142857143" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="28.3263337053572,37.6428571428571,82.633046875,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Incremental Load using MERGE JOIN.Paths[Sortie de source OLE DB]"
           TopLeft="190,67">
@@ -5988,10 +6496,6 @@ WHERE [EmpID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Incremental Load using MERGE JOIN\Insert Update Delete"
-          TopLeft="236,174" />
         <EdgeLayout
           Id="Package\Incremental Load using MERGE JOIN.Paths[Sortie de jointure de fusion]"
           TopLeft="321.25,141">
@@ -6014,10 +6518,64 @@ WHERE [EmpID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164,42"
-          Id="Package\Incremental Load using MERGE JOIN\Add InsertionDate"
-          TopLeft="53,195" />
+        <EdgeLayout
+          Id="Package\Incremental Load using MERGE JOIN.Paths[Sortie de colonne dérivée]"
+          TopLeft="135.75,237">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Incremental Load using MERGE JOIN.Paths[OnlyUpdate]"
+          TopLeft="463.785714285714,323.285714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="241.214285714286,33.2857142857143"
+              Start="0,0"
+              End="241.214285714286,25.7857142857143">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.6428571428572" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.6428571428572"
+                    Point2="0,16.6428571428572"
+                    Point3="4,16.6428571428572" />
+                  <mssgle:LineSegment
+                    End="237.214285714286,16.6428571428572" />
+                  <mssgle:CubicBezierSegment
+                    Point1="237.214285714286,16.6428571428572"
+                    Point2="241.214285714286,16.6428571428572"
+                    Point3="241.214285714286,20.6428571428572" />
+                  <mssgle:LineSegment
+                    End="241.214285714286,25.7857142857143" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="94.1982756696428,21.6428571428572,52.817734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Incremental Load using MERGE JOIN.Paths[InsertNewRecords]"
           TopLeft="296.333333333333,174">
@@ -6054,110 +6612,6 @@ WHERE [EmpID] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="273,42"
-          Id="Package\Incremental Load using MERGE JOIN\Add New Records to STG Employee table"
-          TopLeft="0,292" />
-        <EdgeLayout
-          Id="Package\Incremental Load using MERGE JOIN.Paths[Sortie de colonne dérivée]"
-          TopLeft="135.75,237">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55"
-              Start="0,0"
-              End="0,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="212,42"
-          Id="Package\Incremental Load using MERGE JOIN\Fractionnement conditionnel"
-          TopLeft="308,237" />
-        <EdgeLayout
-          Id="Package\Incremental Load using MERGE JOIN.Paths[UpdateOldRecords]"
-          TopLeft="413,195">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="1,42"
-              Start="0,0"
-              End="1,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-3,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-3,0"
-                    Point2="1,0"
-                    Point3="1,4" />
-                  <mssgle:LineSegment
-                    End="1,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-40.3165234375,-17.609375,82.633046875,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="230,42"
-          Id="Package\Incremental Load using MERGE JOIN\Update records in the STG table"
-          TopLeft="310,328" />
-        <EdgeLayout
-          Id="Package\Incremental Load using MERGE JOIN.Paths[OnlyUpdate]"
-          TopLeft="414,279">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="11,49"
-              Start="0,0"
-              End="11,41.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.5"
-                    Point2="0,24.5"
-                    Point3="4,24.5" />
-                  <mssgle:LineSegment
-                    End="7,24.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="7,24.5"
-                    Point2="11,24.5"
-                    Point3="11,28.5" />
-                  <mssgle:LineSegment
-                    End="11,41.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-20.9088671875,29.5,52.817734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="314,42"
-          Id="Package\Incremental Load using MERGE JOIN\Update DeletionDate column to the date of delete"
-          TopLeft="504,183" />
         <EdgeLayout
           Id="Package\Incremental Load using MERGE JOIN.Paths[DeleteRecords]"
           TopLeft="413,189.333333333333">
