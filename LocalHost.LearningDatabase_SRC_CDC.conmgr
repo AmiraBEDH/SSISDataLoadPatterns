@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LocalHost LearningDatabase_SRC_CDC"
+  DTS:DTSID="{F46872F8-8CEE-433F-966D-D998516DEBF5}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=.;Initial Catalog=LearningDatabase;Integrated Security=True;Application Name=SSIS-SSISDataLoadPatterns-{F46872F8-8CEE-433F-966D-D998516DEBF5}LocalHost.LearningDatabase1 1;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
